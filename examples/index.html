@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json-to-dom-form examples</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #071421;
+        --panel: #0f172a;
+        --panel-alt: #111827;
+        --soft: #e2e8f0;
+        --muted: #94a3b8;
+        --line: rgba(148,163,184,0.2);
+        --blue: #38bdf8;
+        --blue-strong: #2563eb;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, Arial, sans-serif;
+        background: linear-gradient(180deg, #020817, #071421 45%, #0f172a);
+        color: var(--soft);
+      }
+
+      .wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 18px;
+        border: 1px solid var(--line);
+        background: rgba(15,23,42,0.85);
+        border-radius: 999px;
+        margin-bottom: 28px;
+      }
+
+      .brand {
+        font-weight: 700;
+      }
+
+      .links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        color: var(--soft);
+        text-decoration: none;
+        opacity: 0.8;
+      }
+
+      .hero {
+        padding: 24px 0 18px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(56,189,248,0.12);
+        color: var(--blue);
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin-top: 16px;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+      }
+
+      .lead {
+        color: var(--muted);
+        max-width: 820px;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 28px;
+      }
+
+      .card {
+        background: rgba(15,23,42,0.9);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+      }
+
+      .feature h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .feature p {
+        color: var(--muted);
+        margin-bottom: 14px;
+        line-height: 1.6;
+      }
+
+      .pill {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--blue), var(--blue-strong));
+        color: #03131d;
+        border-radius: 999px;
+        font-weight: 700;
+        padding: 8px 12px;
+        text-decoration: none;
+      }
+
+      .section-title {
+        margin: 28px 0 18px;
+        font-size: 1.5rem;
+      }
+
+      .demo-panel {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        background: rgba(15,23,42,0.9);
+      }
+
+      .demo-head {
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .demo-body {
+        padding: 20px;
+      }
+
+      .demo-body .sample-form {
+        min-height: 220px;
+      }
+
+      @media (max-width: 960px) {
+        .grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">json-to-dom-form</div>
+        <div class="links">
+          <a href="./index.html">Overview</a>
+          <a href="./pages/layouts.html">Layouts</a>
+          <a href="./pages/controls.html">Controls</a>
+          <a href="./pages/bootstrap.html">Bootstrap App</a>
+          <a href="../README.md">Readme</a>
+        </div>
+      </div>
+
+      <header class="hero">
+        <span class="eyebrow">Local playground</span>
+        <h1>Huge examples for real experimentation</h1>
+        <p class="lead">
+          This collection is intentionally bigger than a simple demo. It shows the system in multiple visual modes:
+          stacked, horizontal, inline, grid, search controls, section cards, and a bootstrap-style app shell.
+        </p>
+      </header>
+
+      <div class="grid">
+        <article class="card feature">
+          <h3>Layout flavors</h3>
+          <p>See the same metadata rendered as stacked, horizontal, grid, and inline forms.</p>
+          <a class="pill" href="./pages/layouts.html">Open layouts</a>
+        </article>
+
+        <article class="card feature">
+          <h3>Control patterns</h3>
+          <p>Focuses on labels, input fields, buttons, and search-action styling.</p>
+          <a class="pill" href="./pages/controls.html">Open controls</a>
+        </article>
+
+        <article class="card feature">
+          <h3>Bootstrap app shell</h3>
+          <p>A full-screen page layout that shows the form inside a product-like dashboard.</p>
+          <a class="pill" href="./pages/bootstrap.html">Open app shell</a>
+        </article>
+      </div>
+
+      <h2 class="section-title">Quick preview</h2>
+
+      <div class="demo-panel">
+        <div class="demo-head">
+          <strong>Featured form</strong>
+          <small class="text-muted">live metadata form</small>
+        </div>
+        <div class="demo-body">
+          <div id="featured-form" class="sample-form"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./shared.js"></script>
+    <script type="module">
+      import { renderExample } from "./shared.js";
+
+      const featured = {
+        title: "Featured form",
+        data: {
+          stockItemName: "ROPE",
+          batchName: "Tuf-Rs.170",
+          amount: "420.00",
+          voucherNo: "V-2048",
+          warehouse: "Main Warehouse"
+        },
+        columns: [
+          { key: "stockItemName", label: "Stock item", type: "string", searchButton: true },
+          { key: "batchName", label: "Batch name", type: "string" },
+          { key: "amount", label: "Amount", type: "number" },
+          { key: "voucherNo", label: "Voucher no", type: "string" },
+          { key: "warehouse", label: "Warehouse", type: "string" }
+        ],
+        config: {
+          layout: "horizontal",
+          body: { columns: ["stockItemName", "batchName", "amount", "voucherNo", "warehouse"] }
+        },
+        theme: "default"
+      };
+
+      await renderExample({ targetId: "featured-form", definition: featured });
+    </script>
+  </body>
+</html>

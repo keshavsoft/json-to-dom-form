@@ -24,8 +24,46 @@ const createActions = ({ inForm } = {}) => {
 
     const localGetData = () => {
         if (!localForm?.formElement) return {};
-        const formData = new FormData(localForm.formElement);
-        return Object.fromEntries(formData.entries());
+
+        const result = {};
+        const collect = (node) => {
+            if (!(node instanceof Element)) return;
+
+            const candidates = node.matches ? node.matches("input, select, textarea") ? [node] : [] : [];
+            const childInputs = Array.from(node.querySelectorAll("input, select, textarea"));
+            const allInputs = [...candidates, ...childInputs];
+
+            allInputs.forEach((control) => {
+                if (!control.name) return;
+
+                if (control instanceof HTMLInputElement && (control.type === "checkbox" || control.type === "radio")) {
+                    if (control.checked) {
+                        result[control.name] = control.value ?? true;
+                    }
+                    return;
+                }
+
+                if (control instanceof HTMLSelectElement && control.multiple) {
+                    result[control.name] = Array.from(control.selectedOptions).map(option => option.value);
+                    return;
+                }
+
+                if (control instanceof HTMLInputElement && control.type === "file") {
+                    result[control.name] = control.files?.length ? Array.from(control.files).map(file => file.name) : "";
+                    return;
+                }
+
+                result[control.name] = control.value;
+            });
+        };
+
+        if (localForm.formElement instanceof HTMLFormElement) {
+            collect(localForm.formElement);
+            return result;
+        }
+
+        collect(localForm.formElement);
+        return result;
     };
 
     const localSetData = ({ inData = {} } = {}) => {

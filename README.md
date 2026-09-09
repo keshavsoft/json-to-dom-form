@@ -5,6 +5,7 @@ A lightweight, config-driven form renderer for turning a column schema and confi
 ## Start here
 
 - Docs hub: [docs/index.html](docs/index.html)
+- Local examples playground: [examples/index.html](examples/index.html)
 - Overview: [docs/overview.html](docs/overview.html)
 - Why this repo exists: [docs/why.html](docs/why.html)
 - How it works: [docs/how-it-works.html](docs/how-it-works.html)
@@ -18,10 +19,12 @@ npm install
 npm run dev
 ```
 
-Then open the local demo or visit:
+Then open the local playground in the browser:
 
-- Demo: https://keshavsoft.github.io/json-to-dom-form/
-- Repo: https://github.com/keshavsoft/json-to-dom-form
+- Local examples: `/examples/index.html`
+- Docs: `/docs/index.html`
+
+This repo is intentionally local-first and small in scope. The examples folder is the fastest place to experiment without touching core source files.
 
 ## Minimal usage
 
