@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How it works | json-to-dom-form</title>
+  <link rel="stylesheet" href="./site.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">J</span>
+        <span>json-to-dom-form</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="./overview.html">Overview</a>
+        <a href="./why.html">Why</a>
+        <a class="active" href="./how-it-works.html">How it works</a>
+        <a href="./architecture.html">Architecture</a>
+        <a href="./tasks.html">Tasks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <section class="hero-card">
+      <div class="hero-header">
+        <span class="kicker">How it works</span>
+        <h1>The form pipeline is simple.</h1>
+      </div>
+      <div class="hero-body">
+        <div class="grid">
+          <article class="card col-12">
+            <h2>Flow</h2>
+            <div class="codebox">
+<pre><code>Form
+  -> FormStore
+  -> buildSpec / buildForm
+  -> renderForm
+  -> DOM nodes
+  -> controlsTree</code></pre>
+            </div>
+          </article>
+
+          <article class="card col-4">
+            <h2>1. Define columns</h2>
+            <p>Each field is described with metadata like <code>key</code>, <code>label</code>, and <code>type</code>.</p>
+          </article>
+
+          <article class="card col-4">
+            <h2>2. Define config</h2>
+            <p>Config decides active fields, layout, theme, and section structure.</p>
+          </article>
+
+          <article class="card col-4">
+            <h2>3. Render form</h2>
+            <p>The form instance builds a spec, generates DOM, and mounts it into a target container.</p>
+          </article>
+
+          <article class="card col-12">
+            <h2>4. Read data back</h2>
+            <p>Once rendered, the form can be updated, reset, or queried with <code>getData()</code>. This keeps the project practical without adding a large runtime layer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    json-to-dom-form • schema to DOM flow
+  </footer>
+</body>
+</html>

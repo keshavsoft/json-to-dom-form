@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why | json-to-dom-form</title>
+  <link rel="stylesheet" href="./site.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">J</span>
+        <span>json-to-dom-form</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="./overview.html">Overview</a>
+        <a class="active" href="./why.html">Why</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./architecture.html">Architecture</a>
+        <a href="./tasks.html">Tasks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <section class="hero-card">
+      <div class="hero-header">
+        <span class="kicker">Why this exists</span>
+        <h1>Because repetitive form HTML is expensive.</h1>
+        <p>
+          This project exists to reduce boilerplate when field definitions are already known as data.
+          If the schema exists, the UI can be generated from it instead of hand-coded repeatedly.
+        </p>
+      </div>
+      <div class="hero-body">
+        <div class="grid">
+          <article class="card col-6">
+            <h2>The problem</h2>
+            <ul class="warns">
+              <li>Repeated HTML for similar fields</li>
+              <li>Duplicated wrappers and layout code</li>
+              <li>Manual glue between schema and UI</li>
+              <li>Slow iteration when form definitions change</li>
+            </ul>
+          </article>
+
+          <article class="card col-6">
+            <h2>The idea</h2>
+            <ul class="checks">
+              <li>Keep the form definition in structured data</li>
+              <li>Render from that schema</li>
+              <li>Keep behavior lean and predictable</li>
+              <li>Use config for layout and theme, not app logic</li>
+            </ul>
+          </article>
+
+          <article class="card col-12">
+            <h2>One-sentence summary</h2>
+            <p>
+              The repo exists to turn structured form metadata into working DOM forms with minimal boilerplate.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    json-to-dom-form • data-driven form rendering
+  </footer>
+</body>
+</html>

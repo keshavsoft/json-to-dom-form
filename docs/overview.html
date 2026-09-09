@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview | json-to-dom-form</title>
+  <link rel="stylesheet" href="./site.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">J</span>
+        <span>json-to-dom-form</span>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="active" href="./overview.html">Overview</a>
+        <a href="./why.html">Why</a>
+        <a href="./how-it-works.html">How it works</a>
+        <a href="./architecture.html">Architecture</a>
+        <a href="./tasks.html">Tasks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <section class="hero-card">
+      <div class="hero-header">
+        <span class="kicker">Project overview</span>
+        <h1>Metadata-driven forms, made simple.</h1>
+        <p>
+          This project turns a column schema and a config object into a DOM form. It is intentionally narrow:
+          it builds forms from data, not from a large application runtime.
+        </p>
+      </div>
+      <div class="hero-body">
+        <div class="grid">
+          <article class="card col-6">
+            <h2>What it does</h2>
+            <ul class="checks">
+              <li>Defines columns as metadata like key, label, and type.</li>
+              <li>Renders those columns into a DOM form based on config.</li>
+              <li>Supports layout and theme switching through config or runtime methods.</li>
+              <li>Produces a <code>controlsTree</code> for programmatic access and binding.</li>
+              <li>Lets you preload data and read it back later from the rendered form.</li>
+            </ul>
+          </article>
+
+          <article class="card col-6">
+            <h2>Typical use cases</h2>
+            <ul class="checks">
+              <li>Search and filter panels</li>
+              <li>CRUD-like data entry forms</li>
+              <li>Metadata-driven admin screens</li>
+              <li>Simple UI screens driven by field definitions</li>
+            </ul>
+          </article>
+
+          <article class="card col-12">
+            <h2>What it is not</h2>
+            <ul class="warns">
+              <li>A full form validation framework</li>
+              <li>A backend or data service layer</li>
+              <li>A general-purpose UI framework</li>
+              <li>A replacement for app-specific business logic</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    json-to-dom-form • schema-first form rendering
+  </footer>
+</body>
+</html>

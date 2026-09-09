@@ -4,11 +4,11 @@ A lightweight, config-driven form renderer for turning a column schema and confi
 
 ## Start here
 
-- Overview: [docs/overview.md](docs/overview.md)
-- Why this repo exists: [docs/why.md](docs/why.md)
-- How it works: [docs/how-it-works.md](docs/how-it-works.md)
-- Architecture: [docs/architecture.md](docs/architecture.md)
-- Tasks / todo: [docs/tasks.md](docs/tasks.md)
+- Overview: [docs/overview.html](docs/overview.html)
+- Why this repo exists: [docs/why.html](docs/why.html)
+- How it works: [docs/how-it-works.html](docs/how-it-works.html)
+- Architecture: [docs/architecture.html](docs/architecture.html)
+- Tasks / todo: [docs/tasks.html](docs/tasks.html)
 
 ## Quick start
 
