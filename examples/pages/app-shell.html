@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>json-to-dom-form bootstrap shell</title>
+    <title>App shell · json-to-dom-form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
       body {
@@ -72,12 +72,9 @@
           <aside class="sidebar col-lg-2 p-4">
             <div class="d-flex align-items-center gap-2 mb-4">
               <div class="rounded-circle bg-primary bg-opacity-10 px-2 py-1 text-primary fw-bold">J</div>
-              <strong>json-to-dom-form</strong>
+              <strong>App Shell</strong>
             </div>
             <div class="nav flex-column gap-2">
-              <div class="nav-item active rounded px-3 py-2">Dashboard</div>
-              <div class="nav-item rounded px-3 py-2">Inventory</div>
-              <div class="nav-item rounded px-3 py-2">Purchase</div>
               <div class="nav-item rounded px-3 py-2">Settings</div>
             </div>
           </aside>
@@ -113,9 +110,9 @@
       </div>
     </div>
 
-    <script type="module" src="../../shared.js"></script>
+    <script type="module" src="../shared.js"></script>
     <script type="module">
-      import { renderExample } from "../../shared.js";
+      import { renderExample } from "../shared.js";
 
       const appExample = {
         title: "Bootstrap shell form",
