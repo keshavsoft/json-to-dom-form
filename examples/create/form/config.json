@@ -1,0 +1,11 @@
+{
+  "body": {
+    "columns": [
+      "LedgerName",
+      "InvoiceNo",
+      "InvoiceDate"
+    ]
+  },
+  "layout": "horizontal",
+  "searchButtons": true
+}
