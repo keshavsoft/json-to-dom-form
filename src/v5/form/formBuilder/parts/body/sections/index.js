@@ -17,9 +17,7 @@ const buildSections = ({
         return null;
     }
 
-    const columnsMap = buildColumnsMap({
-        inColumns
-    });
+    const columnsMap = buildColumnsMap({ inColumns });
 
     const sections = inConfig.sections.map(inSection => {
         const sectionColumns = resolveSectionColumns({
@@ -33,19 +31,20 @@ const buildSections = ({
             inConfig
         });
 
-        const sectionHeader = buildSectionHeader({
-            inSection
+        const sectionBody = buildSectionBody({
+            inChildren: sectionFields,
+            inClass: inSection.bodyClass || inClasses?.sectionBody || "d-flex flex-column gap-3"
         });
 
-        const sectionBody = buildSectionBody({
-            inChildren: sectionFields
+        const sectionHeader = buildSectionHeader({
+            inSection,
+            inClasses
         });
 
         const sectionCard = buildSectionCard({
-            inChildren: [
-                sectionHeader,
-                sectionBody
-            ].filter(Boolean)
+            inChildren: [sectionHeader, sectionBody].filter(Boolean),
+            inSection,
+            inClasses
         });
 
         return buildSectionNode({
@@ -55,9 +54,10 @@ const buildSections = ({
     });
 
     return buildSectionsContainer({
-        inChildren: sections
+        inChildren: sections,
+        inClass: inConfig.sectionsRowClass || "row g-4"
     });
 };
 
-export { buildSections };
+export { buildSections, hasSections };
 export default buildSections;

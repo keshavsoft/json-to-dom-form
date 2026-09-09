@@ -1,5 +1,4 @@
-import { hasSections } from "./hasSections.js";
-import { buildSections } from "./buildSections.js";
+import { buildSections, hasSections } from "./sections/index.js";
 import { buildFieldRows } from "./buildFieldRows.js";
 import { buildBodyClass } from "./buildBodyClass.js";
 
