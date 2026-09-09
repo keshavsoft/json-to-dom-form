@@ -7,5 +7,24 @@
     ]
   },
   "layout": "horizontal",
-  "searchButtons": true
+  "searchButtons": false,
+  "foot": {
+    "rows": [
+      {
+        "buttons": [
+          {
+            "id": "footer-clear-btn",
+            "name": "clear",
+            "label": "Clear"
+          },
+          {
+            "id": "footer-search-btn",
+            "name": "search",
+            "label": "Search",
+            "variant": "primary"
+          }
+        ]
+      }
+    ]
+  }
 }
