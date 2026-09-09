@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json-to-dom-form</title>
+    <style>
+      :root {
+        --bg: #020b16;
+        --bg-soft: #071d2d;
+        --panel: #0d1f2d;
+        --panel-alt: #122738;
+        --line: rgba(148, 163, 184, 0.18);
+        --text: #edf6ff;
+        --muted: #9eb5c9;
+        --cyan: #67e8f9;
+        --blue: #60a5fa;
+        --violet: #8b5cf6;
+        --gold: #facc15;
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, rgba(96, 165, 250, 0.12), transparent 30%), var(--bg);
+        color: var(--text);
+      }
+
+      body {
+        background-image: linear-gradient(180deg, rgba(5, 20, 34, 0.9), rgba(2, 11, 22, 1));
+      }
+
+      a { color: inherit; }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        backdrop-filter: blur(12px);
+        background: rgba(2, 11, 22, 0.88);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: 82px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .brand-mark {
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--cyan), var(--blue));
+        color: #081429;
+        font-weight: 800;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        justify-content: center;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--muted);
+        padding: 10px 12px;
+        border-radius: 999px;
+        transition: 0.2s ease;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        color: var(--text);
+        background: rgba(148, 163, 184, 0.08);
+      }
+
+      .hero {
+        padding: 54px 0 24px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        border: 1px solid rgba(103, 232, 249, 0.2);
+        background: rgba(103, 232, 249, 0.08);
+        color: var(--cyan);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 22px 0 16px;
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 0.96;
+        letter-spacing: -0.07em;
+      }
+
+      .lead {
+        max-width: 920px;
+        color: var(--muted);
+        font-size: 1.15rem;
+        line-height: 1.75;
+        margin-bottom: 28px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        padding: 0 18px;
+        font-weight: 700;
+        border-radius: 12px;
+        text-decoration: none;
+        border: 1px solid var(--line);
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--cyan), var(--blue));
+        color: #071423;
+        border-color: transparent;
+      }
+
+      .button.secondary {
+        background: rgba(148, 163, 184, 0.05);
+        color: var(--text);
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 30px;
+      }
+
+      .card {
+        background: linear-gradient(180deg, rgba(15, 26, 38, 0.95), rgba(11, 19, 29, 0.95));
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px 22px;
+        min-height: 210px;
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-size: 1.2rem;
+      }
+
+      .card p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .link-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 10px 14px;
+        text-decoration: none;
+        background: rgba(139, 92, 246, 0.14);
+        border: 1px solid rgba(139, 92, 246, 0.34);
+        color: #e9d5ff;
+        font-weight: 600;
+      }
+
+      .feature-band {
+        margin-top: 38px;
+        padding: 30px 0 10px;
+      }
+
+      .feature-band .inner {
+        background: rgba(15, 26, 38, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px 24px;
+      }
+
+      .two-up {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 22px;
+      }
+
+      .code-block {
+        margin: 0;
+        padding: 18px 20px;
+        border-radius: 14px;
+        background: rgba(2, 11, 22, 0.9);
+        border: 1px solid var(--line);
+        color: #d9f7ff;
+        font: 14px/1.7 "SFMono-Regular", Consolas, monospace;
+        overflow: auto;
+      }
+
+      .notes {
+        padding-left: 18px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      @media (max-width: 900px) {
+        .cards,
+        .two-up {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar-inner {
+          padding: 12px 0;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <span class="brand-mark">J</span>
+          <span>json-to-dom-form</span>
+        </div>
+        <nav class="nav" aria-label="Main navigation">
+          <a class="active" href="./index.html">Home</a>
+          <a href="./docs/index.html">Docs</a>
+          <a href="./docs/overview.html">Overview</a>
+          <a href="./docs/why.html">Why</a>
+          <a href="./docs/how-it-works.html">How it works</a>
+          <a href="./docs/architecture.html">Architecture</a>
+          <a href="./docs/tasks.html">Tasks</a>
+          <a href="./examples/index.html">Examples</a>
+          <a href="https://github.com/keshavsoft/json-to-dom-form">Repo</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <span class="eyebrow">metadata-driven forms</span>
+        <h1>json-to-dom-form</h1>
+        <p class="lead">
+          A lightweight, config-driven form renderer that turns a column schema and configuration object into a DOM form.
+          It is intentionally narrow: it builds forms from data, not full application logic.
+        </p>
+
+        <div class="cta-row">
+          <a class="button primary" href="./examples/index.html">Open examples</a>
+          <a class="button secondary" href="./docs/index.html">Open docs</a>
+        </div>
+      </section>
+
+      <section class="cards">
+        <article class="card">
+          <h3>Overview</h3>
+          <p>High-level summary of the project, what it renders, and where it fits in a real UI workflow.</p>
+          <a class="link-pill" href="./docs/overview.html">Open overview</a>
+        </article>
+
+        <article class="card">
+          <h3>Why</h3>
+          <p>Explains the problem this repo solves and why metadata-driven form rendering is useful.</p>
+          <a class="link-pill" href="./docs/why.html">Open why</a>
+        </article>
+
+        <article class="card">
+          <h3>How it works</h3>
+          <p>Walks through the rendering pipeline from config and columns to DOM output and runtime behavior.</p>
+          <a class="link-pill" href="./docs/how-it-works.html">Open guide</a>
+        </article>
+      </section>
+
+      <section class="feature-band">
+        <div class="inner two-up">
+          <div>
+            <h2>Quick start</h2>
+            <pre class="code-block">npm install
+npm run dev
+</pre>
+          </div>
+          <div>
+            <h2>Public runtime</h2>
+            <ul class="notes">
+              <li>Runtime site: https://keshavsoft.github.io/json-to-dom-form/</li>
+              <li>Docs hub: https://keshavsoft.github.io/json-to-dom-form/docs/index.html</li>
+              <li>Examples: https://keshavsoft.github.io/json-to-dom-form/examples/index.html</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
