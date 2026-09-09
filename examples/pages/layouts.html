@@ -11,11 +11,45 @@
         font-family: Inter, Arial, sans-serif;
       }
       .page-shell { padding: 32px 18px 64px; }
-      .card-demo { border: 1px solid rgba(148,163,184,0.25); border-radius: 18px; background: white; box-shadow: 0 10px 26px rgba(15,23,42,.08); }
+      .card-demo {
+        border: 1px solid rgba(148,163,184,0.25);
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 14px 30px rgba(15,23,42,.08);
+      }
       .badge-soft { background: #e0f2fe; color: #075985; }
       .nav-link { color: #0f172a; }
       .nav-link:hover { color: #0f172a; }
       .example-block { min-height: 220px; }
+      .info-panel {
+        background: #f8fafc;
+        border: 1px solid rgba(148,163,184,.18);
+        border-radius: 14px;
+        padding: 12px 14px;
+        margin-top: 14px;
+      }
+      .chip {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        background: #e2e8f0;
+        color: #334155;
+        border-radius: 999px;
+        padding: 6px 10px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: #0f172a;
+        color: #e2e8f0;
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-size: 12px;
+        line-height: 1.6;
+        margin-top: 12px;
+      }
     </style>
   </head>
   <body>
@@ -25,21 +59,41 @@
         <div class="d-flex gap-3">
           <a class="nav-link" href="../index.html">Overview</a>
           <a class="nav-link" href="./layouts.html">Layouts</a>
-          <a class="nav-link" href="./controls.html">Controls</a>
-          <a class="nav-link" href="./bootstrap.html">Bootstrap App</a>
+          <a class="nav-link" href="./control/controls.html">Controls</a>
+          <a class="nav-link" href="./bootstrap/bootstrap.html">Bootstrap App</a>
         </div>
       </nav>
 
       <div class="mb-4">
         <span class="badge badge-soft px-3 py-2 rounded-pill">Layout variants</span>
         <h1 class="mt-3 mb-2">Vertical, horizontal, inline, and grid flavor</h1>
-        <p class="text-muted mb-0">These examples show how the same metadata model can be rendered in different presentation styles.</p>
+        <p class="text-muted mb-0">
+          These examples show the same metadata model rendered in different presentation styles. The form data stays the same,
+          while the arrangement and density of the UI changes to match the task.
+        </p>
+      </div>
+
+      <div class="mb-4">
+        <strong>Open individual layout pages:</strong>
+        <div class="d-flex flex-wrap gap-2 mt-2">
+          <a class="btn btn-sm btn-outline-primary" href="./layout/stacked-layout.html">Stacked</a>
+          <a class="btn btn-sm btn-outline-primary" href="./layout/horizontal-layout.html">Horizontal</a>
+          <a class="btn btn-sm btn-outline-primary" href="./layout/inline-layout.html">Inline</a>
+          <a class="btn btn-sm btn-outline-primary" href="./layout/grid-layout.html">Grid</a>
+        </div>
       </div>
 
       <div class="row g-4">
         <div class="col-lg-6">
           <div class="card-demo h-100 p-4">
             <h4>1. Stacked form</h4>
+            <p class="text-muted mb-2">Best for clean entry screens where each field deserves its own row and the user reads top to bottom.</p>
+            <div class="info-panel">
+              <span class="chip">Use it for</span>
+              <span class="chip">Edit flows</span>
+              <span class="chip">Detailed data entry</span>
+              <div class="mono">layout: "stacked"<br />body: { columns: ["itemName", "batchName", "amount"] }</div>
+            </div>
             <div id="stacked-demo" class="example-block mt-3"></div>
           </div>
         </div>
@@ -47,6 +101,13 @@
         <div class="col-lg-6">
           <div class="card-demo h-100 p-4">
             <h4>2. Horizontal form</h4>
+            <p class="text-muted mb-2">Useful when the labels are short and the field values need to be scanned quickly in a single line.</p>
+            <div class="info-panel">
+              <span class="chip">Use it for</span>
+              <span class="chip">Filters</span>
+              <span class="chip">Compact review</span>
+              <div class="mono">layout: "horizontal"<br />body: { columns: ["stockItem", "voucherNo", "unitPrice"] }</div>
+            </div>
             <div id="horizontal-demo" class="example-block mt-3"></div>
           </div>
         </div>
@@ -54,6 +115,13 @@
         <div class="col-lg-6">
           <div class="card-demo h-100 p-4">
             <h4>3. Inline quick filter</h4>
+            <p class="text-muted mb-2">A glanceable arrangement for search and narrow operations, especially when multiple inputs belong together.</p>
+            <div class="info-panel">
+              <span class="chip">Use it for</span>
+              <span class="chip">Search bars</span>
+              <span class="chip">Date ranges</span>
+              <div class="mono">layout: "inline"<br />body: { columns: ["searchText", "dateFrom", "dateTo"] }</div>
+            </div>
             <div id="inline-demo" class="example-block mt-3"></div>
           </div>
         </div>
@@ -61,6 +129,13 @@
         <div class="col-lg-6">
           <div class="card-demo h-100 p-4">
             <h4>4. Grid / two-column form</h4>
+            <p class="text-muted mb-2">Best for balanced forms where related fields sit side by side without losing readability.</p>
+            <div class="info-panel">
+              <span class="chip">Use it for</span>
+              <span class="chip">Profile screens</span>
+              <span class="chip">Master forms</span>
+              <div class="mono">layout: "grid-2col"<br />body: { columns: ["firstName", "lastName", "company", "email"] }</div>
+            </div>
             <div id="grid-demo" class="example-block mt-3"></div>
           </div>
         </div>

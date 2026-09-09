@@ -35,6 +35,34 @@
       }
       .theme-pill { background: #dbeafe; color: #1d4ed8; }
       .form-wrap { min-height: 240px; }
+      .info-box {
+        background: #f8fafc;
+        border: 1px solid rgba(148,163,184,.18);
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin-bottom: 18px;
+      }
+      .chip {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        border-radius: 999px;
+        background: #e2e8f0;
+        color: #334155;
+        padding: 6px 10px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: #0f172a;
+        color: #e2e8f0;
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-size: 12px;
+        line-height: 1.6;
+      }
     </style>
   </head>
   <body>
@@ -63,6 +91,13 @@
               <span class="theme-pill badge rounded-pill px-3 py-2">Bootstrap view</span>
             </div>
 
+            <div class="info-box">
+              <span class="chip">Full app</span>
+              <span class="chip">Dashboard shell</span>
+              <span class="chip">Product workflow</span>
+              <div class="mono mt-3">layout: "grid-2col"<br />body: { columns: ["stockItemName", "batchName", "rate", "branchName", "remarks"] }</div>
+            </div>
+
             <div class="content-panel p-4">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
@@ -78,9 +113,9 @@
       </div>
     </div>
 
-    <script type="module" src="../shared.js"></script>
+    <script type="module" src="../../shared.js"></script>
     <script type="module">
-      import { renderExample } from "../shared.js";
+      import { renderExample } from "../../shared.js";
 
       const appExample = {
         title: "Bootstrap shell form",

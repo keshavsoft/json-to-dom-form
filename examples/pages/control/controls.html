@@ -11,28 +11,70 @@
         font-family: Inter, Arial, sans-serif;
       }
       .shell { padding: 30px 18px 60px; }
-      .demo-panel { background: white; border: 1px solid rgba(148,163,184,0.25); border-radius: 20px; box-shadow: 0 16px 30px rgba(15,23,42,.08); }
+      .demo-panel {
+        background: white;
+        border: 1px solid rgba(148,163,184,0.25);
+        border-radius: 20px;
+        box-shadow: 0 16px 30px rgba(15,23,42,.08);
+      }
       .subheader { color: #475569; }
       .muted-pill { background: #eef2ff; color: #4338ca; }
       .btn-primary-soft { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; }
+      .info-strip {
+        background: #f8fafc;
+        border: 1px solid rgba(148,163,184,.18);
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin: 14px 0 18px;
+      }
+      .chip {
+        display: inline-block;
+        border-radius: 999px;
+        background: #e2e8f0;
+        color: #334155;
+        padding: 6px 10px;
+        font-size: 11px;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        background: #0f172a;
+        color: #e2e8f0;
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-size: 12px;
+        line-height: 1.6;
+      }
     </style>
   </head>
   <body>
     <div class="shell container">
       <nav class="d-flex justify-content-between align-items-center bg-white rounded-pill shadow-sm px-4 py-3 mb-4">
-        <a class="fw-bold text-decoration-none text-dark" href="../index.html">json-to-dom-form</a>
+        <a class="fw-bold text-decoration-none text-dark" href="../../index.html">json-to-dom-form</a>
         <div class="d-flex gap-3 text-muted">
-          <a class="text-decoration-none text-dark" href="../index.html">Overview</a>
-          <a class="text-decoration-none text-dark" href="./layouts.html">Layouts</a>
+          <a class="text-decoration-none text-dark" href="../../index.html">Overview</a>
+          <a class="text-decoration-none text-dark" href="../layouts.html">Layouts</a>
           <a class="text-decoration-none text-dark" href="./controls.html">Controls</a>
-          <a class="text-decoration-none text-dark" href="./bootstrap.html">Bootstrap App</a>
+          <a class="text-decoration-none text-dark" href="../bootstrap/bootstrap.html">Bootstrap App</a>
         </div>
       </nav>
 
       <div class="mb-4">
         <span class="badge muted-pill px-3 py-2 rounded-pill">Control patterns</span>
         <h1 class="mt-3 mb-2">Labels, inputs, buttons and search actions</h1>
-        <p class="subheader mb-0">This display focuses on the control grammar the library understands and renders well.</p>
+        <p class="subheader mb-0">
+          This page focuses on the UI grammar the form engine understands: searchable inputs, labels, field grouping, and action-friendly layouts.
+        </p>
+      </div>
+
+      <div class="info-strip">
+        <span class="chip">Readable</span>
+        <span class="chip">Action-friendly</span>
+        <span class="chip">Metadata-driven</span>
+        <div class="mono mt-3">columns: [{ key: "stockItem", label: "Stock item", type: "string", searchButton: true }]</div>
       </div>
 
       <div class="demo-panel p-4">
@@ -48,13 +90,14 @@
 
       <div class="demo-panel mt-4 p-4">
         <h4 class="mb-3">Section cards</h4>
+        <p class="text-muted">This pattern groups related data into logical blocks so the user can scan records by category instead of reading a single long list.</p>
         <div id="section-demo"></div>
       </div>
     </div>
 
-    <script type="module" src="../shared.js"></script>
+    <script type="module" src="../../shared.js"></script>
     <script type="module">
-      import { renderExample } from "../shared.js";
+      import { renderExample } from "../../shared.js";
 
       const controlExample = {
         title: "Sectioned panel",
