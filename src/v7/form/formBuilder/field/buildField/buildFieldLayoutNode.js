@@ -1,8 +1,8 @@
-const buildFieldNode = ({ inFieldModel = {}, inLabelNode = null, inControlNode = null } = {}) => {
-    const fieldAttributes = inFieldModel.fieldClass ? { class: inFieldModel.fieldClass } : {};
+const buildFieldLayoutNode = ({ inFieldPlan = {}, inLabelNode = null, inControlNode = null } = {}) => {
+    const fieldAttributes = inFieldPlan.fieldClass ? { class: inFieldPlan.fieldClass } : {};
 
-    if (inFieldModel.alignment === "horizontal") {
-        const controlColumnNode = inFieldModel.controlWrapperClass
+    if (inFieldPlan.alignment === "horizontal") {
+        const controlColumnNode = inFieldPlan.controlWrapperClass
             ? inControlNode
             : {
                 tagName: "div",
@@ -28,5 +28,5 @@ const buildFieldNode = ({ inFieldModel = {}, inLabelNode = null, inControlNode =
     };
 };
 
-export { buildFieldNode };
-export default buildFieldNode;
+export { buildFieldLayoutNode };
+export default buildFieldLayoutNode;
