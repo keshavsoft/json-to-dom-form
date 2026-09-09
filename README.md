@@ -4,13 +4,10 @@ A lightweight, config-driven form renderer for turning a column schema and confi
 
 ## Start here
 
-- Docs hub: [docs/index.html](docs/index.html)
-- Local examples playground: [examples/index.html](examples/index.html)
-- Overview: [docs/overview.html](docs/overview.html)
-- Why this repo exists: [docs/why.html](docs/why.html)
-- How it works: [docs/how-it-works.html](docs/how-it-works.html)
-- Architecture: [docs/architecture.html](docs/architecture.html)
-- Tasks / todo: [docs/tasks.html](docs/tasks.html)
+- Live runtime site: https://keshavsoft.github.io/json-to-dom-form/
+- Live docs hub: https://keshavsoft.github.io/json-to-dom-form/docs/index.html
+- Live examples: https://keshavsoft.github.io/json-to-dom-form/examples/index.html
+- Repo: https://github.com/keshavsoft/json-to-dom-form
 
 ## Quick start
 
@@ -19,10 +16,7 @@ npm install
 npm run dev
 ```
 
-Then open the local playground in the browser:
-
-- Local examples: `/examples/index.html`
-- Docs: `/docs/index.html`
+Then open the local browser at the Vite URL and use the examples folder locally. For the public runtime, use the GitHub Pages site above.
 
 This repo is intentionally local-first and small in scope. The examples folder is the fastest place to experiment without touching core source files.
 
