@@ -4,6 +4,7 @@ A lightweight, config-driven form renderer for turning a column schema and confi
 
 ## Start here
 
+- Docs hub: [docs/index.html](docs/index.html)
 - Overview: [docs/overview.html](docs/overview.html)
 - Why this repo exists: [docs/why.html](docs/why.html)
 - How it works: [docs/how-it-works.html](docs/how-it-works.html)
