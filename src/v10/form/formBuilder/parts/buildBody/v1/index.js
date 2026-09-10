@@ -1,7 +1,16 @@
 import childSpec from "./child.json" with { type: "json" };
 
-const startFunc = ({ inColumns = [], inSpecKey = "formVerticalCreate" } = {}) => {
-    const specObject = childSpec[inSpecKey];
+const startFunc = ({ inColumns = [], inConfig, inSpecKey = "formVerticalCreate" } = {}) => {
+    const specKey = inConfig.body.specKey;
+    const splitArray = specKey.split(".");
+    // const specObject = childSpec[specKey];
+
+    const specObject = splitArray.reduce(
+        (acc, key) => acc?.[key],
+        childSpec
+    );
+
+    console.log("specObject : ", specObject);
 
     const children = inColumns.map(element => {
         let loopInside = structuredClone(specObject);
@@ -13,6 +22,8 @@ const startFunc = ({ inColumns = [], inSpecKey = "formVerticalCreate" } = {}) =>
 
         return loopInside
     });
+
+    console.log("children---- : ", children);
 
     return children;
 };

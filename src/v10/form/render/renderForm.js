@@ -15,7 +15,7 @@ const renderForm = ({ inForm, inContainerId, inContainer } = {}) => {
             error: "Form instance (inForm) is required"
         };
     };
-
+    
     const formSpec = buildForm({
         inColumns: localForm.store.activeColumns,
         inConfig: localForm.store.config,

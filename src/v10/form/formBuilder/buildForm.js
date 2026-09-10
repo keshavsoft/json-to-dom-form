@@ -12,7 +12,10 @@ const buildForm = ({ inColumns = [], inConfig = {}, inClasses = {} } = {}) => {
     // const body = buildBody({ inColumns: localColumns, inConfig: localConfig, inClasses: localClasses });
     const foot = buildFoot({ inFootConfig: localConfig?.foot, inClasses: localClasses });
 
-    const body = buildBodyV1({ inColumns: localColumns });
+    const body = buildBodyV1({
+        inColumns: localColumns,
+        inConfig: localConfig
+    });
 
     console.log("body : ", body);
 

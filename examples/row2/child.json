@@ -1,0 +1,307 @@
+{
+    "treeWithIds": {
+        "tagName": "div",
+        "attributes": {},
+        "children": [
+            {
+                "tagName": "div",
+                "attributes": {
+                    "class": "pt-3 mt-3 border-top"
+                },
+                "children": [
+                    {
+                        "tagName": "div",
+                        "attributes": {
+                            "class": "d-flex flex-column gap-2"
+                        },
+                        "children": [
+                            {
+                                "tagName": "div",
+                                "attributes": {
+                                    "class": "d-flex align-items-center justify-content-end gap-2 flex-wrap"
+                                },
+                                "children": [
+                                    {
+                                        "tagName": "button",
+                                        "id": "footer-clear-btn",
+                                        "name": "clear",
+                                        "type": "button",
+                                        "attributes": {
+                                            "type": "button",
+                                            "name": "clear",
+                                            "class": "btn btn-outline-secondary",
+                                            "id": "footer-clear-btn"
+                                        }
+                                    },
+                                    {
+                                        "tagName": "button",
+                                        "id": "footer-search-btn",
+                                        "name": "search",
+                                        "type": "button",
+                                        "attributes": {
+                                            "type": "button",
+                                            "name": "search",
+                                            "class": "btn btn-primary",
+                                            "id": "footer-search-btn"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "spec": {
+        "tagName": "div",
+        "attributes": {},
+        "children": [
+            [
+                {
+                    "tagName": "div",
+                    "attributes": {
+                        "class": "row align-items-center g-2"
+                    },
+                    "children": [
+                        {
+                            "tagName": "div",
+                            "attributes": {
+                                "class": "row align-items-center g-2"
+                            },
+                            "children": [
+                                {
+                                    "tagName": "label",
+                                    "textContent": "Ledger Name",
+                                    "attributes": {
+                                        "class": "col-sm-4 col-form-label text-sm-end mb-0 fw-semibold text-secondary small",
+                                        "for": "LedgerName"
+                                    }
+                                },
+                                {
+                                    "tagName": "div",
+                                    "attributes": {
+                                        "class": "col-sm-8"
+                                    },
+                                    "children": [
+                                        {
+                                            "tagName": "input",
+                                            "attributes": {
+                                                "type": "string",
+                                                "name": "LedgerName",
+                                                "placeholder": "Enter Ledger Name...",
+                                                "class": "form-control",
+                                                "list": "LedgerName-datalist"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tagName": "div",
+                    "attributes": {
+                        "class": "row align-items-center g-2"
+                    },
+                    "children": [
+                        {
+                            "tagName": "div",
+                            "attributes": {
+                                "class": "row align-items-center g-2"
+                            },
+                            "children": [
+                                {
+                                    "tagName": "label",
+                                    "textContent": "Invoice Number",
+                                    "attributes": {
+                                        "class": "col-sm-4 col-form-label text-sm-end mb-0 fw-semibold text-secondary small",
+                                        "for": "InvoiceNo"
+                                    }
+                                },
+                                {
+                                    "tagName": "div",
+                                    "attributes": {
+                                        "class": "col-sm-8"
+                                    },
+                                    "children": [
+                                        {
+                                            "tagName": "input",
+                                            "attributes": {
+                                                "type": "number",
+                                                "name": "InvoiceNo",
+                                                "placeholder": "Enter Ledger Name...",
+                                                "class": "form-control",
+                                                "list": "LedgerName-datalist"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tagName": "div",
+                    "attributes": {
+                        "class": "row align-items-center g-2"
+                    },
+                    "children": [
+                        {
+                            "tagName": "div",
+                            "attributes": {
+                                "class": "row align-items-center g-2"
+                            },
+                            "children": [
+                                {
+                                    "tagName": "label",
+                                    "textContent": "Invoice Date",
+                                    "attributes": {
+                                        "class": "col-sm-4 col-form-label text-sm-end mb-0 fw-semibold text-secondary small",
+                                        "for": "InvoiceDate"
+                                    }
+                                },
+                                {
+                                    "tagName": "div",
+                                    "attributes": {
+                                        "class": "col-sm-8"
+                                    },
+                                    "children": [
+                                        {
+                                            "tagName": "input",
+                                            "attributes": {
+                                                "type": "date",
+                                                "name": "InvoiceDate",
+                                                "placeholder": "Enter Ledger Name...",
+                                                "class": "form-control",
+                                                "list": "LedgerName-datalist"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            {
+                "tagName": "div",
+                "attributes": {
+                    "class": "pt-3 mt-3 border-top"
+                },
+                "children": [
+                    {
+                        "tagName": "div",
+                        "attributes": {
+                            "class": "d-flex flex-column gap-2"
+                        },
+                        "children": [
+                            {
+                                "tagName": "div",
+                                "attributes": {
+                                    "class": "d-flex align-items-center justify-content-end gap-2 flex-wrap"
+                                },
+                                "children": [
+                                    {
+                                        "tagName": "button",
+                                        "textContent": "Clear",
+                                        "attributes": {
+                                            "type": "button",
+                                            "name": "clear",
+                                            "class": "btn btn-outline-secondary",
+                                            "id": "footer-clear-btn"
+                                        }
+                                    },
+                                    {
+                                        "tagName": "button",
+                                        "textContent": "Search",
+                                        "attributes": {
+                                            "type": "button",
+                                            "name": "search",
+                                            "class": "btn btn-primary",
+                                            "id": "footer-search-btn"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "element": {},
+    "store": {
+        "source": {
+            "originalData": [],
+            "columns": [
+                {
+                    "key": "LedgerName",
+                    "label": "Ledger Name",
+                    "type": "string"
+                },
+                {
+                    "key": "InvoiceNo",
+                    "label": "Invoice Number",
+                    "type": "number"
+                },
+                {
+                    "key": "InvoiceDate",
+                    "label": "Invoice Date",
+                    "type": "date"
+                }
+            ],
+            "config": {
+                "body": {
+                    "columns": [
+                        "LedgerName",
+                        "InvoiceNo",
+                        "InvoiceDate"
+                    ]
+                },
+                "layout": "horizontal",
+                "searchButtons": false,
+                "foot": {
+                    "rows": [
+                        {
+                            "buttons": [
+                                {
+                                    "id": "footer-clear-btn",
+                                    "name": "clear",
+                                    "label": "Clear"
+                                },
+                                {
+                                    "id": "footer-search-btn",
+                                    "name": "search",
+                                    "label": "Search",
+                                    "variant": "primary"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "library": {
+            "activeColumns": [
+                {
+                    "key": "LedgerName",
+                    "label": "Ledger Name",
+                    "type": "string"
+                },
+                {
+                    "key": "InvoiceNo",
+                    "label": "Invoice Number",
+                    "type": "number"
+                },
+                {
+                    "key": "InvoiceDate",
+                    "label": "Invoice Date",
+                    "type": "date"
+                }
+            ],
+            "formData": {}
+        }
+    }
+}
