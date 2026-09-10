@@ -21,6 +21,7 @@ const renderForm = ({ inForm, inContainerId, inContainer } = {}) => {
         inConfig: localForm.store.config,
         inClasses: localForm.classes
     });
+    // console.log("formSpec : ", formSpec);
 
     const controlsTree = pruneTreeWithIds({ inSpec: formSpec });
 

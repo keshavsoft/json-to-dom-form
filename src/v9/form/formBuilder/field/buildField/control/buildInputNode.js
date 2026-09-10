@@ -1,4 +1,6 @@
 const buildInputNode = ({ inFieldPlan = {} } = {}) => {
+    console.log("inFieldPlan : ", inFieldPlan);
+
     const attributes = {
         type: inFieldPlan.inputType,
         name: inFieldPlan.key,

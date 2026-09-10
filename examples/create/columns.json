@@ -7,7 +7,7 @@
     {
         "key": "InvoiceNo",
         "label": "Invoice Number",
-        "type": "string"
+        "type": "number"
     },
     {
         "key": "InvoiceDate",

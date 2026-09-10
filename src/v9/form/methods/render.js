@@ -9,11 +9,14 @@ const render = async ({ inForm, inContainerId, inContainer, targetContainerId } 
         await localForm.actions.load();
     };
 
-    return renderStructure({
+    const structure = renderStructure({
         inForm: localForm,
         inContainerId: localContainerId,
         inContainer: localContainer
     });
+    // console.log("structure : ", structure);
+
+    return structure;
 };
 
 export { render };

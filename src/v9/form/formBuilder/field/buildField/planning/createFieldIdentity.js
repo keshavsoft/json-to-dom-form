@@ -7,7 +7,7 @@ const createFieldIdentity = ({ inColumn = {} } = {}) => {
     return {
         key,
         labelText: inColumn.label || key,
-        inputType: resolveInputType({ inColumn }),
+        inputType: inColumn.type || resolveInputType({ inColumn }),
         inputId: inColumn.id || ""
     };
 };
