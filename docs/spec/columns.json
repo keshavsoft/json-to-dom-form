@@ -1,0 +1,26 @@
+[
+    {
+        "key": "LedgerName",
+        "field": "LedgerName",
+        "label": "Ledger Name",
+        "title": "Ledger Name",
+        "type": "string",
+        "placeholder": "Enter Ledger Name..."
+    },
+    {
+        "key": "InvoiceNo",
+        "field": "InvoiceNo",
+        "label": "Invoice Number",
+        "title": "Invoice Number",
+        "type": "number",
+        "placeholder": "Enter Invoice Number..."
+    },
+    {
+        "key": "InvoiceDate",
+        "field": "InvoiceDate",
+        "label": "Invoice Date",
+        "title": "Invoice Date",
+        "type": "date",
+        "placeholder": "YYYY-MM-DD"
+    }
+]

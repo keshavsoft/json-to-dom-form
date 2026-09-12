@@ -1,0 +1,102 @@
+{
+  "tagName": "div",
+  "attributes": {
+    "class": "max-w-xl mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+  },
+  "children": [
+    {
+      "tagName": "div",
+      "attributes": {
+        "class": "px-6 py-4 bg-gray-50 border-b border-gray-200"
+      },
+      "children": [
+        {
+          "tagName": "h2",
+          "textContent": "${head.title}",
+          "attributes": {
+            "class": "text-lg font-semibold text-gray-800"
+          }
+        },
+        {
+          "tagName": "p",
+          "textContent": "${head.subtitle}",
+          "attributes": {
+            "class": "text-xs text-gray-500 mt-0.5"
+          }
+        }
+      ]
+    },
+    {
+      "tagName": "form",
+      "attributes": {
+        "id": "entry-form",
+        "class": "p-0 m-0"
+      },
+      "children": [
+        {
+          "tagName": "div",
+          "attributes": {
+            "class": "p-6 space-y-4"
+          },
+          "children": [
+            {
+              "operation": "iterate",
+              "source": "columns",
+              "filter": {
+                "isVisible": true
+              },
+              "template": {
+                "tagName": "div",
+                "attributes": {
+                  "class": "flex flex-col space-y-1.5"
+                },
+                "children": [
+                  {
+                    "tagName": "label",
+                    "textContent": "${label}",
+                    "attributes": {
+                      "for": "${key}",
+                      "class": "block text-xs font-semibold uppercase tracking-wider text-gray-600"
+                    }
+                  },
+                  {
+                    "tagName": "input",
+                    "attributes": {
+                      "type": "${type}",
+                      "id": "${key}",
+                      "name": "${key}",
+                      "placeholder": "${placeholder}",
+                      "class": "w-full px-3 py-2 text-sm text-gray-800 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "tagName": "div",
+          "attributes": {
+            "class": "px-6 py-3.5 bg-gray-50 border-t border-gray-200 flex justify-end space-x-3"
+          },
+          "children": [
+            {
+              "operation": "iterate",
+              "source": "buttons",
+              "template": {
+                "tagName": "button",
+                "textContent": "${label}",
+                "attributes": {
+                  "type": "${type}",
+                  "id": "${id}",
+                  "name": "${name}",
+                  "class": "${class}"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
