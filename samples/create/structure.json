@@ -30,7 +30,8 @@
       "tagName": "form",
       "attributes": {
         "id": "entry-form",
-        "class": "p-0 m-0"
+        "class": "p-0 m-0",
+        "onsubmit": "event.preventDefault();"
       },
       "children": [
         {
@@ -42,9 +43,6 @@
             {
               "operation": "iterate",
               "source": "columns",
-              "filter": {
-                "isVisible": true
-              },
               "template": {
                 "tagName": "div",
                 "attributes": {

@@ -5,7 +5,8 @@
         "label": "Ledger Name",
         "title": "Ledger Name",
         "type": "string",
-        "placeholder": "Enter Ledger Name..."
+        "placeholder": "Enter Ledger Name...",
+        "isVisible": true
     },
     {
         "key": "InvoiceNo",
@@ -13,7 +14,8 @@
         "label": "Invoice Number",
         "title": "Invoice Number",
         "type": "number",
-        "placeholder": "Enter Invoice Number..."
+        "placeholder": "Enter Invoice Number...",
+        "isVisible": true
     },
     {
         "key": "InvoiceDate",
@@ -21,6 +23,7 @@
         "label": "Invoice Date",
         "title": "Invoice Date",
         "type": "date",
-        "placeholder": "YYYY-MM-DD"
+        "placeholder": "YYYY-MM-DD",
+        "isVisible": true
     }
 ]

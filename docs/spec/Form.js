@@ -144,6 +144,16 @@ class Form {
             this.domContainer = mountTarget;
         }
 
+        // Prevent browser form postback on submit
+        const formNode = domNode.tagName === "FORM"
+            ? domNode
+            : domNode.querySelector("form");
+        if (formNode) {
+            formNode.addEventListener("submit", (e) => {
+                e.preventDefault();
+            });
+        }
+
         // Apply pre-existing data values to inputs if not stamped in attributes
         if (localData && typeof localData === "object") {
             this.setData({ inData: localData });
