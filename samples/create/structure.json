@@ -30,7 +30,7 @@
       "tagName": "form",
       "attributes": {
         "id": "entry-form",
-        "class": "p-0 m-0",
+        "class": "p-0 m-0 ksform",
         "onsubmit": "event.preventDefault();"
       },
       "children": [
