@@ -1,5 +1,30 @@
 import { SourceStore } from "../../common/SourceStore.js";
 
+const isPlainObject = (value) => {
+    return !!value && typeof value === "object" && !Array.isArray(value) && !(value instanceof Date);
+};
+
+const mergeJsonValues = (currentValue, incomingValue) => {
+    if (incomingValue === undefined) {
+        return currentValue;
+    }
+
+    if (Array.isArray(currentValue) || Array.isArray(incomingValue)) {
+        return incomingValue ?? currentValue;
+    }
+
+    if (!isPlainObject(currentValue) || !isPlainObject(incomingValue)) {
+        return incomingValue ?? currentValue;
+    }
+
+    const merged = { ...currentValue };
+    Object.entries(incomingValue).forEach(([key, value]) => {
+        merged[key] = mergeJsonValues(merged[key], value);
+    });
+
+    return merged;
+};
+
 class FormStore extends SourceStore {
     constructor({ inColumns = [], inConfig = {}, inData = {} } = {}) {
         const localColumns = inColumns;
@@ -41,8 +66,8 @@ class FormStore extends SourceStore {
     }
 
     updateData({ inData = {} } = {}) {
-        const localData = inData;
-        this.library.formData = (localData && typeof localData === "object") ? localData : {};
+        const baseData = this.library.formData || {};
+        this.library.formData = mergeJsonValues(baseData, inData);
         return this.library.formData;
     }
 }

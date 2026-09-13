@@ -76,9 +76,15 @@ const form = new Form({
   targetContainerId: "form-container"
 });
 
+form.setData({ inData: { batchName: "B-100", amount: 12 } });
+form.setData({ inData: { amount: 15, remarks: "Updated after supplier input" } });
+
 await form.render();
 console.log(form.getData());
+// => { stockItemName: "ROPE", batchName: "B-100", amount: 15, remarks: "Updated after supplier input" }
 ```
+
+`setData()` and `update()` merge the incoming JSON into the existing form data instead of replacing the whole object, so you can safely combine a current record with newly inserted values before rendering.
 
 ## Scope
 
