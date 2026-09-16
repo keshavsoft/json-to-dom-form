@@ -13,6 +13,8 @@
     {
         "key": "InvoiceDate",
         "label": "Invoice Date",
-        "type": "date"
+        "type": "date",
+        "readonly": true,
+        "disabled": true
     }
 ]

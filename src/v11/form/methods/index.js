@@ -9,7 +9,7 @@ const createMethods = ({ inForm } = {}) => {
     const localRender = ({ inContainerId, inContainer, targetContainerId } = {}) => {
         try {
 
-            const VARIANT = "inline"; // "stacked" | "inline" | "list";
+            const VARIANT = "stacked"; // "stacked" | "inline" | "list";
             const structure = structureJson[VARIANT];
             let dataAsJson = {};
 
@@ -17,7 +17,7 @@ const createMethods = ({ inForm } = {}) => {
             dataAsJson.fields = activeColumns;
 
             const specAsJsonToDom = compile(structure, dataAsJson);
-            console.log("-----------localForm ------------: ", specAsJsonToDom, localForm, activeColumns);
+            console.log("-----------localForm ------------: ", dataAsJson.fields);
 
             const fromRenderer = buildSpecElement({ spec: specAsJsonToDom, targetHtmlId: "table-container" });
 

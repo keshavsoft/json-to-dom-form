@@ -23,6 +23,36 @@
                     "class": "card-body"
                 },
                 "jsonToSpec": {
+                    "operation": "loopArray",
+                    "source": "fields",
+                    "template": {
+                        "tagName": "div",
+                        "attributes": {
+                            "class": "mb-3"
+                        },
+                        "children": [
+                            {
+                                "tagName": "label",
+                                "attributes": {
+                                    "class": "form-label"
+                                },
+                                "textContent": "${label}"
+                            },
+                            {
+                                "tagName": "input",
+                                "attributes": {
+                                    "type": "${type}",
+                                    "class": "form-control",
+                                    "value": "${value}",
+                                    "name": "${key}",
+                                    "readonly": "${readonly}",
+                                    "disabled": "${disabled}"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "jsonToSpec1": {
                     "operation": "iterate",
                     "source": "fields",
                     "template": {
@@ -78,6 +108,43 @@
                     "class": "card-body"
                 },
                 "jsonToSpec": {
+                    "operation": "loopArray",
+                    "source": "fields",
+                    "template": {
+                        "tagName": "div",
+                        "attributes": {
+                            "class": "row mb-2 align-items-center"
+                        },
+                        "children": [
+                            {
+                                "tagName": "label",
+                                "attributes": {
+                                    "class": "col-sm-4 col-form-label text-sm-end mb-0 fw-semibold text-secondary small"
+                                },
+                                "textContent": "${label}"
+                            },
+                            {
+                                "tagName": "div",
+                                "attributes": {
+                                    "class": "col-sm-8"
+                                },
+                                "children": [
+                                    {
+                                        "tagName": "input",
+                                        "attributes": {
+                                            "class": "form-control",
+                                            "name": "${key}",
+                                            "value": "${value}",
+                                            "list": "${list}",
+                                            "type": "${type}"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "jsonToSpec1": {
                     "operation": "iterate",
                     "source": "fields",
                     "template": {
