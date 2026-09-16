@@ -40,11 +40,11 @@ const startFunc = async () => {
         config: searchConfig,
         targetContainerId: "filter-container"
     });
-    
+
     console.log("form--- : ", form);
 
 
-    const fromForm = await form.render({ targetContainerId: "form-container" });
+    const fromForm = form.render({ targetContainerId: "form-container" });
     console.log("fromForm--- : ", fromForm);
 
 };

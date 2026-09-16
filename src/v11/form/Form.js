@@ -47,8 +47,7 @@ class Form {
 
         this.methods = createMethods({ inForm: this });
         this.actions = createActions({ inForm: this });
-        this.spec = this.buildSpec();
-    }
+    };
 
     setLayout({ inLayout, layout = "stacked" } = {}) {
         const localLayout = inLayout || layout || "stacked";
@@ -60,17 +59,9 @@ class Form {
         return setTheme({ inForm: this, inTheme: localTheme });
     }
 
-    buildSpec() {
-        return this.methods.buildSpec();
-    }
-
-    renderStructure(args = {}) {
-        return this.methods.renderStructure(args);
-    }
-
-    async render(args = {}) {
-        return await this.methods.render(args);
-    }
+    render(args = {}) {
+        return this.methods.render(args);
+    };
 
     async load(args = {}) {
         return await this.actions.load(args);
