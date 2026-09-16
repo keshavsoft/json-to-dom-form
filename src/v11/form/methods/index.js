@@ -9,7 +9,7 @@ const createMethods = ({ inForm } = {}) => {
     const localRender = ({ inContainerId, inContainer, targetContainerId } = {}) => {
         try {
 
-            const VARIANT = "stacked"; // "stacked" | "inline" | "list";
+            const VARIANT = "inline"; // "stacked" | "inline" | "list";
             const structure = structureJson[VARIANT];
             let dataAsJson = {};
 

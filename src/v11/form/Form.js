@@ -1,7 +1,4 @@
 import { FormStore } from "./formStore/index.js";
-import { setLayout } from "./layout/index.js";
-import { setTheme } from "./theme/index.js";
-import { resolveClasses } from "./classes/index.js";
 import { createMethods } from "./methods/index.js";
 import { createActions } from "./actions/index.js";
 
@@ -29,12 +26,7 @@ class Form {
         this.layout = localLayout;
         this.theme = localTheme;
         this.customClasses = localClasses;
-        this.classes = resolveClasses({
-            inLayout: this.layout,
-            inTheme: this.theme,
-            inConfigClasses: localConfig?.classes,
-            inCustomClasses: this.customClasses
-        });
+
         this.dataProvider = localDataProvider;
         this.formElement = null;
         this.controlsTree = null;
@@ -48,16 +40,6 @@ class Form {
         this.methods = createMethods({ inForm: this });
         this.actions = createActions({ inForm: this });
     };
-
-    setLayout({ inLayout, layout = "stacked" } = {}) {
-        const localLayout = inLayout || layout || "stacked";
-        return setLayout({ inForm: this, inLayout: localLayout });
-    }
-
-    setTheme({ inTheme, theme = "default" } = {}) {
-        const localTheme = inTheme || theme || "default";
-        return setTheme({ inForm: this, inTheme: localTheme });
-    }
 
     render(args = {}) {
         return this.methods.render(args);
