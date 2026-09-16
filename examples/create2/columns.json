@@ -2,7 +2,8 @@
     {
         "key": "LedgerName",
         "label": "Ledger Name",
-        "type": "string"
+        "type": "string",
+        "list": "LedgerName"
     },
     {
         "key": "InvoiceNo",

@@ -1,26 +1,41 @@
 {
     "stacked": {
         "tagName": "div",
-        "attributes": { "class": "card shadow-sm" },
+        "attributes": {
+            "class": "card shadow-sm"
+        },
         "children": [
             {
                 "tagName": "div",
-                "attributes": { "class": "card-header fw-semibold" },
-                "children": [{ "tagName": "span", "textContent": "Ledger Details" }]
+                "attributes": {
+                    "class": "card-header fw-semibold"
+                },
+                "children": [
+                    {
+                        "tagName": "span",
+                        "textContent": "Ledger Details"
+                    }
+                ]
             },
             {
                 "tagName": "div",
-                "attributes": { "class": "card-body" },
+                "attributes": {
+                    "class": "card-body"
+                },
                 "jsonToSpec": {
                     "operation": "iterate",
                     "source": "fields",
                     "template": {
                         "tagName": "div",
-                        "attributes": { "class": "mb-3" },
+                        "attributes": {
+                            "class": "mb-3"
+                        },
                         "children": [
                             {
                                 "tagName": "label",
-                                "attributes": { "class": "form-label" },
+                                "attributes": {
+                                    "class": "form-label"
+                                },
                                 "textContent": "${label}"
                             },
                             {
@@ -41,31 +56,48 @@
     },
     "inline": {
         "tagName": "div",
-        "attributes": { "class": "card shadow-sm" },
+        "attributes": {
+            "class": "card shadow-sm"
+        },
         "children": [
             {
                 "tagName": "div",
-                "attributes": { "class": "card-header fw-semibold" },
-                "children": [{ "tagName": "span", "textContent": "Ledger Details" }]
+                "attributes": {
+                    "class": "card-header fw-semibold"
+                },
+                "children": [
+                    {
+                        "tagName": "span",
+                        "textContent": "Ledger Details"
+                    }
+                ]
             },
             {
                 "tagName": "div",
-                "attributes": { "class": "card-body" },
+                "attributes": {
+                    "class": "card-body"
+                },
                 "jsonToSpec": {
                     "operation": "iterate",
                     "source": "fields",
                     "template": {
                         "tagName": "div",
-                        "attributes": { "class": "row mb-2 align-items-center" },
+                        "attributes": {
+                            "class": "row mb-2 align-items-center"
+                        },
                         "children": [
                             {
                                 "tagName": "label",
-                                "attributes": { "class": "col-4 col-form-label fw-medium text-end" },
+                                "attributes": {
+                                    "class": "col-4 col-form-label fw-medium text-end"
+                                },
                                 "textContent": "${label}"
                             },
                             {
                                 "tagName": "div",
-                                "attributes": { "class": "col-8" },
+                                "attributes": {
+                                    "class": "col-8"
+                                },
                                 "children": [
                                     {
                                         "tagName": "input",
@@ -73,7 +105,7 @@
                                             "type": "text",
                                             "class": "form-control form-control-sm",
                                             "value": "${value}",
-                                            "readonly": "true"
+                                            "list": "${list}"
                                         }
                                     }
                                 ]
@@ -87,31 +119,48 @@
     },
     "inlineWithButtons": {
         "tagName": "div",
-        "attributes": { "class": "card shadow-sm" },
+        "attributes": {
+            "class": "card shadow-sm"
+        },
         "children": [
             {
                 "tagName": "div",
-                "attributes": { "class": "card-header fw-semibold" },
-                "children": [{ "tagName": "span", "textContent": "Ledger Details" }]
+                "attributes": {
+                    "class": "card-header fw-semibold"
+                },
+                "children": [
+                    {
+                        "tagName": "span",
+                        "textContent": "Ledger Details"
+                    }
+                ]
             },
             {
                 "tagName": "div",
-                "attributes": { "class": "card-body" },
+                "attributes": {
+                    "class": "card-body"
+                },
                 "jsonToSpec": {
                     "operation": "iterate",
                     "source": "fields",
                     "template": {
                         "tagName": "div",
-                        "attributes": { "class": "row mb-2 align-items-center" },
+                        "attributes": {
+                            "class": "row mb-2 align-items-center"
+                        },
                         "children": [
                             {
                                 "tagName": "label",
-                                "attributes": { "class": "col-4 col-form-label fw-medium text-end" },
+                                "attributes": {
+                                    "class": "col-4 col-form-label fw-medium text-end"
+                                },
                                 "textContent": "${label}"
                             },
                             {
                                 "tagName": "div",
-                                "attributes": { "class": "col-6" },
+                                "attributes": {
+                                    "class": "col-6"
+                                },
                                 "children": [
                                     {
                                         "tagName": "input",
@@ -126,7 +175,9 @@
                             },
                             {
                                 "tagName": "div",
-                                "attributes": { "class": "col-2 d-flex gap-1" },
+                                "attributes": {
+                                    "class": "col-2 d-flex gap-1"
+                                },
                                 "children": [
                                     {
                                         "tagName": "button",
@@ -155,31 +206,48 @@
     },
     "list": {
         "tagName": "div",
-        "attributes": { "class": "card shadow-sm" },
+        "attributes": {
+            "class": "card shadow-sm"
+        },
         "children": [
             {
                 "tagName": "div",
-                "attributes": { "class": "card-header fw-semibold" },
-                "children": [{ "tagName": "span", "textContent": "Ledger Details" }]
+                "attributes": {
+                    "class": "card-header fw-semibold"
+                },
+                "children": [
+                    {
+                        "tagName": "span",
+                        "textContent": "Ledger Details"
+                    }
+                ]
             },
             {
                 "tagName": "ul",
-                "attributes": { "class": "list-group list-group-flush" },
+                "attributes": {
+                    "class": "list-group list-group-flush"
+                },
                 "jsonToSpec": {
                     "operation": "iterate",
                     "source": "fields",
                     "template": {
                         "tagName": "li",
-                        "attributes": { "class": "list-group-item d-flex justify-content-between align-items-center" },
+                        "attributes": {
+                            "class": "list-group-item d-flex justify-content-between align-items-center"
+                        },
                         "children": [
                             {
                                 "tagName": "span",
-                                "attributes": { "class": "text-muted" },
+                                "attributes": {
+                                    "class": "text-muted"
+                                },
                                 "textContent": "${label}"
                             },
                             {
                                 "tagName": "span",
-                                "attributes": { "class": "fw-medium" },
+                                "attributes": {
+                                    "class": "fw-medium"
+                                },
                                 "textContent": "${value}"
                             }
                         ]

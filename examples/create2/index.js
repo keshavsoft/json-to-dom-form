@@ -8,7 +8,7 @@ import menuConfig from "./menu/config.json" with { type: "json" };
 // import { Form } from "https://keshavsoft.github.io/json-to-dom-form/dist/v1/min.js";
 import { Form } from "../../src/v11/index.js";
 
-import { DataList } from "https://keshavsoft.github.io/json-to-dom-datalist/dist/v7/min.js";
+import { DataList } from "https://keshavsoft.github.io/json-to-dom-datalist/dist/v9/min.js";
 import { createDataProvider } from "https://keshavsoft.github.io/json-to-dom-provider/dist/v1/min.js";
 
 // 2. Event listeners and menu actions
